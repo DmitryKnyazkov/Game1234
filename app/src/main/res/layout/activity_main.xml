@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical"
     android:background="@color/baseColor"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -36,8 +36,8 @@
                 android:id="@+id/value_move"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/baseColorDark"
                 android:text="5"
+                android:textColor="@color/baseColorDark"
                 android:textSize="25sp" />
         </LinearLayout>
     </LinearLayout>
@@ -77,8 +77,8 @@
         android:id="@+id/record_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginBottom="40dp">
+        android:layout_marginBottom="40dp"
+        android:layout_weight="1">
 
         <LinearLayout
             android:id="@+id/record_layout_inner"
@@ -99,8 +99,8 @@
                 android:id="@+id/value_record"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/baseColorDark"
                 android:text="1000"
+                android:textColor="@color/baseColorDark"
                 android:textSize="25sp" />
         </LinearLayout>
     </LinearLayout>
@@ -109,10 +109,10 @@
         android:id="@+id/field_layout"
         android:layout_width="365dp"
         android:layout_height="365dp"
-        android:padding="5dp"
-        android:background="@color/baseColorDark"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:background="@color/baseColorDark"
+        android:orientation="vertical"
+        android:padding="5dp">
 
         <LinearLayout
             android:id="@+id/vertical_0"
@@ -124,47 +124,41 @@
                 android:id="@+id/button00"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:text="1"
-                android:textSize="40sp"
-                android:backgroundTint="@color/white"
                 android:background="@drawable/squarebutton"
-                />
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button01"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:text="2"
-                android:textSize="40sp"
                 android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/green"/>
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/button02"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:text="3"
-                android:textSize="40sp"
                 android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/orange"/>
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/red"
-                android:text="4"
-                android:textSize="40sp"
                 android:id="@+id/button03"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/red"
-                android:text="4"
-                android:textSize="40sp"
                 android:id="@+id/button04"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
         </LinearLayout>
 
@@ -173,52 +167,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/blue"
-                android:text="5"
-                android:textSize="40sp"
                 android:id="@+id/button10"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/blue"
-                android:text="5"
-                android:textSize="40sp"
                 android:id="@+id/button11"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/red"
-                android:text="4"
-                android:textSize="40sp"
                 android:id="@+id/button12"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/white"
-                android:text="1"
-                android:textSize="40sp"
                 android:id="@+id/button13"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/violet"
-                android:text="6"
-                android:textSize="40sp"
                 android:id="@+id/button14"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/vertical_2"
             android:layout_width="match_parent"
@@ -226,49 +217,44 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/blue"
-                android:text="5"
-                android:textSize="40sp"
                 android:id="@+id/button20"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/orange"
-                android:text="3"
-                android:textSize="40sp"
                 android:id="@+id/button21"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/red"
-                android:text="4"
-                android:textSize="40sp"
                 android:id="@+id/button22"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/orange"
-                android:text="3"
-                android:textSize="40sp"
                 android:id="@+id/button23"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/white"
-                android:text="1"
-                android:textSize="40sp"
                 android:id="@+id/button24"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
         </LinearLayout>
 
@@ -279,53 +265,52 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/yellow"
-                android:text="7"
-                android:textSize="40sp"
                 android:id="@+id/button30"
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/red"
-                android:text="4"
-                android:textSize="40sp"
                 android:id="@+id/button31"
+
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/white"
-                android:text="1"
-                android:textSize="40sp"
                 android:id="@+id/button32"
+
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/yellow"
-                android:text="7"
-                android:textSize="40sp"
                 android:id="@+id/button33"
+
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/violet"
-                android:text="6"
-                android:textSize="40sp"
                 android:id="@+id/button34"
+
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
         </LinearLayout>
 
@@ -336,53 +321,53 @@
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/yellow"
-                android:text="7"
-                android:textSize="40sp"
                 android:id="@+id/button40"
+
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/orange"
-                android:text="3"
-                android:textSize="40sp"
                 android:id="@+id/button41"
+
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/violet"
-                android:text="6"
-                android:textSize="40sp"
                 android:id="@+id/button42"
+
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/orange"
-                android:text="3"
-                android:textSize="40sp"
                 android:id="@+id/button43"
+
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
 
 
             <androidx.appcompat.widget.AppCompatButton
-                android:background="@drawable/squarebutton"
-                android:backgroundTint="@color/yellow"
-                android:text="7"
-                android:textSize="40sp"
                 android:id="@+id/button44"
+
                 android:layout_width="70dp"
-                android:layout_height="70dp"/>
+                android:layout_height="70dp"
+                android:background="@drawable/squarebutton"
+
+                android:textSize="40sp" />
         </LinearLayout>
 
     </LinearLayout>
@@ -391,16 +376,16 @@
         android:id="@+id/screen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
         android:layout_marginTop="30dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:gravity="end">
 
         <LinearLayout
             android:id="@+id/screen_inner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/text_screen"
