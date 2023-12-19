@@ -18,6 +18,54 @@ class MainActivity : AppCompatActivity() {
         //вписываем buildFeatures { viewBinding = true }, т.е. подключаем специальную библиотеку.
         setContentView(binding.root)
 
+        val mapColorButton = mapOf(
+            1 to getColor(R.color.violet),
+            2 to getColor(R.color.green),
+            3 to getColor(R.color.orange),
+            4 to getColor(R.color.red),
+            5 to getColor(R.color.blue),
+            6 to getColor(R.color.violet),
+            7 to getColor(R.color.yellow)
+        )
+
+        val listButtons = mutableListOf(
+            mutableListOf(
+                binding.button00,
+                binding.button01,
+                binding.button02,
+                binding.button03,
+                binding.button04
+            ),
+            mutableListOf(
+                binding.button10,
+                binding.button11,
+                binding.button12,
+                binding.button13,
+                binding.button14
+            ),
+            mutableListOf(
+                binding.button20,
+                binding.button21,
+                binding.button22,
+                binding.button23,
+                binding.button24
+            ),
+            mutableListOf(
+                binding.button30,
+                binding.button31,
+                binding.button32,
+                binding.button33,
+                binding.button34
+            ),
+            mutableListOf(
+                binding.button40,
+                binding.button41,
+                binding.button42,
+                binding.button43,
+                binding.button44
+            )
+        )
+
         fun initMatrix(): MutableList<MutableList<Int>> {
             // Этот метод создает матрицу значений для кнопок игравого поля
             var listMatrix = mutableListOf<MutableList<Int>>()
@@ -31,20 +79,16 @@ class MainActivity : AppCompatActivity() {
 
         var gameMatrix = initMatrix() // записываем матрицу значений в переменну.
 
-        fun viewField(gameMatrix: MutableList<Int>) {
+        fun viewField(mutableList: MutableList<MutableList<Int>>) {
             // Этод метод должен передавать значения матрицы кнопкам игравого поля.
-            var list0 = gameMatrix[0] // пытаюсь облегчить работу zip. из списка списков
-            // делаю простой список с интами. НЕ ПОМОГЛО ((
-            var listButton0 = listOf( //список кнопок
-                binding.button00,
-                binding.button01,
-                binding.button02,
-                binding.button03,
-                binding.button04
-            )
-            listButton0.zip(list0) { x: Button, y: Int -> x.text = y.toString() }
-            // пытаюсь итерироваться по двум спискам и провзаимодейтвовать элементами.
-            // НЕ ПОЛУЧАЕТСЯ! НЕ понимаю почему. ((
+            for (i in 0..4) {
+                listButtons[i].zip(mutableList[i]) { btn: Button, vle: Int ->
+                    btn.text = vle.toString();
+                    var color = mapColorButton[vle]
+                    btn.setBackgroundColor(color)
+                }
+            }
         }
+        viewField(gameMatrix)
     }
 }
