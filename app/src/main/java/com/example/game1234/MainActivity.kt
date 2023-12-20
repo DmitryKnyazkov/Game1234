@@ -92,10 +92,84 @@ class MainActivity : AppCompatActivity() {
         var gameMatrix = initMatrix() // записываем матрицу значений в переменну.
         viewField(gameMatrix)
 
+        // Эта функция возвращает список кнопок (пар их индексов) совподающий с текущей,
+        // включая текущую и совпадающих соседей соседей.
+        fun buttonSSCheck(gameMatrix: MutableList<MutableList<Int>>, currentButton: Pair<Int, Int>): MutableList<Pair<Int, Int>> {
+
+            var listOfMatchesGeneral: MutableList<Pair<Int, Int>> = mutableListOf()
+            var listOfUsedButtons: MutableList<Pair<Int, Int>> = mutableListOf()
+
+            // Эта функция возвращает список СОСЕДНИХ кнопок (пар их индексов) совподающий с текущей
+            // самой текущей в списке нет.
+            fun buttonCheck (
+                gameMatrix: MutableList<MutableList<Int>>,
+                currentButton: Pair<Int, Int>,
+                listOfUsedButtons: MutableList<Pair<Int, Int>>): MutableList<Pair<Int, Int>> {
+                var listOfMatches: MutableList<Pair<Int, Int>> = mutableListOf()
+
+                if (currentButton !in listOfUsedButtons) {
+                    if (currentButton.second != 4) {
+                        // проверяем соседа справа.
+                        if (gameMatrix[currentButton.first][currentButton.second + 1] == gameMatrix[currentButton.first][currentButton.second]) {
+                            listOfMatches.add(Pair(currentButton.first, currentButton.second + 1))
+                        }
+                    }
+
+                    if (currentButton.second != 0) {
+                        // проверяем соседа слева.
+                        if (gameMatrix[currentButton.first][currentButton.second - 1] == gameMatrix[currentButton.first][currentButton.second]) {
+                            listOfMatches.add(Pair(currentButton.first, currentButton.second - 1))
+                        }
+                    }
+
+                    if (currentButton.first != 4) {
+                        // проверяем соседа снизу.
+                        if (gameMatrix[currentButton.first + 1][currentButton.second] == gameMatrix[currentButton.first][currentButton.second]) {
+                            listOfMatches.add(Pair(currentButton.first + 1, currentButton.second))
+                        }
+                    }
+
+                    if (currentButton.first != 0) {
+                        // проверяем соседа слева.
+                        if (gameMatrix[currentButton.first - 1][currentButton.second] == gameMatrix[currentButton.first][currentButton.second]) {
+                            listOfMatches.add(Pair(currentButton.first - 1, currentButton.second))
+                        }
+                    }
+                }
+//                listOfUsedButtons.add(currentButton)
+                return listOfMatches
+            }
+
+
+            listOfMatchesGeneral.add(currentButton)
+
+            // Здесь мы собираем лист кнопок совпадений listOfMatchesGeneral
+            while (listOfMatchesGeneral != listOfUsedButtons) {
+
+                for (it in listOfMatchesGeneral) {
+                    listOfUsedButtons.add(it)
+                    var listNewMatches = buttonCheck(gameMatrix, it, listOfUsedButtons)
+                    listNewMatches.forEach { it -> listOfMatchesGeneral.add(it) }
+                }
+            }
+
+            if (listOfMatchesGeneral.size < 3) {
+                listOfMatchesGeneral.clear()
+            }
+            return listOfMatchesGeneral
+
+
+
+
+        }
+
+        // Эта функция вешает на кнопки слушаталай. пребавляет еденицу. сравнивает совпадения соседей.
+        // перерисовывает поле.
         fun listenerCounter() {
             binding.button00.setOnClickListener {
                 if (gameMatrix[0][0] < 7) {
                     gameMatrix[0][0]++
+                    buttonSSCheck(gameMatrix, Pair(0, 0))
                     viewField(gameMatrix)
                 }
             }
@@ -247,6 +321,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
         listenerCounter()
+
+
+
+        }
     }
-}
